@@ -37,9 +37,21 @@ The page also accepts a date in the URL: `http://127.0.0.1:8787/?date=2025-12-05
 
 ## Date-range scraping
 
-**Keep `npm start` running in one terminal**. The Python script talks to the local Node server at `http://127.0.0.1:8787/api/flights`, which fetches all four launch sites for a given date.
+**Before running the npm scrape commands, check that your local Python script supports the requested output format:**
 
-In another terminal, run any of these:
+```bash
+python3 xcontest_paced.py --help
+```
+
+The output **must** include `--format {csv,json,both}`. If it does not, your repository contains an older `xcontest_paced.py`. Replace that file with the updated one from this package; just changing the README or `package.json` will not make `scrape:csv` work.
+
+Start the Node server in one terminal and **leave it running**:
+
+```bash
+npm start
+```
+
+In a second terminal, run the scraper (the `--` passes the arguments through npm):
 
 ```bash
 # One date, CSV only
@@ -53,6 +65,9 @@ npm run scrape:both -- 2025-12-01 2025-12-31
 
 # General command: choose the output at runtime
 npm run scrape -- 2025-12-01 2025-12-31 --format csv
+
+# November 2026, CSV, custom path and pacing
+npm run scrape:csv -- 2026-11-01 2026-11-24 --delay 2 --jitter 1 --output exports/nov-26
 ```
 
 The `--` after the npm script name is **important**: it passes the dates and flags to Python.
@@ -155,18 +170,29 @@ Node tests run against mocked XContest responses; Python tests use a local fixtu
 
 This folder can be committed directly to a Git repository. No credentials, `.xcontest-cache` data, or generated CSV/JSON exports need to be committed. Before publishing, review whether you want to include a software license and whether your data use is consistent with XContest's terms.
 
-### `argument start: Expected YYYY-MM-DD` when using `scrape:csv`
+### `argument start: Expected YYYY-MM-DD` even though the date is valid
 
-Your `package.json` and Python script are out of sync. The `scrape:csv` and `scrape:json` npm commands require a version of `xcontest_paced.py` that recognizes `--format`. Confirm with:
+If npm displays this command:
+
+```text
+python3 xcontest_paced.py --format csv 2025-12-05
+```
+
+but Python's usage output **does not list `--format`**, you are running an **older scraper file**. The old parser mistakes `csv` for the required `start` date.
+
+**Fix:** Replace `xcontest_paced.py` in the repository root with the updated script included in this package. Verify it, then retry:
 
 ```bash
 python3 xcontest_paced.py --help
+# Verify the help output includes: --format {csv,json,both}
+
+npm run scrape:csv -- 2025-12-05
 ```
 
-The options must include `--format {csv,json,both}`. Replace the Python script with the one supplied in this package. Then run, for example:
+If you must temporarily keep the older script, this command is compatible with the previous CLI, but it **writes both CSV and JSON** because the old script cannot choose a format:
 
 ```bash
-npm run scrape:csv -- 2026-11-01 2026-11-24 --delay 2 --jitter 1 --output exports/nov-26
+npm run scrape -- 2025-12-05
 ```
 
-**Note:** The local viewer must be running in another terminal (`npm start`).
+If a date command subsequently reports a connection error, check that `npm start` is running in a **different terminal**. CLI version errors and XContest connectivity errors are separate issues.
