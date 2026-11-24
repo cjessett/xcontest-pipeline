@@ -1,0 +1,57 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="color-scheme" content="light">
+  <title>Santa Barbara Flights — XContest</title>
+  <link rel="stylesheet" href="/styles.css">
+  <script type="module" src="/app.js"></script>
+</head>
+<body>
+  <header class="masthead">
+    <div class="container masthead-inner">
+      <div class="brand"><div class="brand-icon" aria-hidden="true">↗</div><div><strong>SB Flight Log</strong><span>Powered by public XContest data</span></div></div>
+      <a class="source" target="_blank" rel="noopener noreferrer" href="https://www.xcontest.org/world/en/hotspots">XContest <span aria-hidden="true">↗</span></a>
+    </div>
+  </header>
+  <main class="container">
+    <section class="intro">
+      <span class="eyebrow">SANTA BARBARA · PARAGLIDING</span>
+      <h1>Flights by launch site<span class="period">.</span></h1>
+      <p>Find public XContest flights from EJ Bowl, VOR, Skyport, and Nuthouse on any date.</p>
+    </section>
+
+    <section class="control-bar" aria-label="Flight search">
+      <form id="date-form">
+        <label for="flight-date">Flight date</label>
+        <div class="date-actions">
+          <button class="date-arrow" type="button" id="prev-day" title="Previous day" aria-label="Previous day">‹</button>
+          <input type="date" id="flight-date" name="date" required>
+          <button class="date-arrow" type="button" id="next-day" title="Next day" aria-label="Next day">›</button>
+          <button class="find-button" type="submit" id="find-button">Find flights <span aria-hidden="true">→</span></button>
+        </div>
+      </form>
+      <div class="control-side"><span class="indicator"></span><span>No account required</span></div>
+    </section>
+
+    <div class="meta-line"><span id="day-heading">Select a date</span><span id="season-label"></span></div>
+    <div id="site-chips" class="site-chips" role="group" aria-label="Filter by launch site"></div>
+
+    <section class="stats-grid" aria-label="Summary">
+      <div class="metric"><div class="metric-label">Flights <span class="metric-symbol">↗</span></div><div class="metric-number" id="total-flights">—</div><div class="metric-note">Recorded flights</div></div>
+      <div class="metric"><div class="metric-label">Total distance <span class="metric-symbol">↗</span></div><div class="metric-number" id="total-distance">—</div><div class="metric-note">Kilometers combined</div></div>
+      <div class="metric"><div class="metric-label">Total points <span class="metric-symbol">↗</span></div><div class="metric-number" id="total-points">—</div><div class="metric-note">XContest scoring</div></div>
+      <div class="metric"><div class="metric-label">Longest flight <span class="metric-symbol">↗</span></div><div class="metric-number" id="longest-flight">—</div><div class="metric-note" id="longest-pilot">Farthest distance</div></div>
+    </section>
+
+    <section class="results" aria-label="Flight results">
+      <div class="results-heading"><div><h2>Flight results</h2><p id="result-caption">Choose a date to see flights.</p></div><button type="button" id="export-button" class="export-button" disabled><span aria-hidden="true">↓</span> Export CSV</button></div>
+      <div id="status" class="status" role="status" aria-live="polite">Select a date to get started.</div>
+      <div id="site-results" class="site-results"></div>
+    </section>
+
+    <footer><span>Showing flights listed by XContest; this is not a record of every actual launch.</span><span>Public data · United States · FAI3</span></footer>
+  </main>
+</body>
+</html>

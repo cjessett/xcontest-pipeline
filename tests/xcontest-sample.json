@@ -1,0 +1,370 @@
+{
+  "EJ Bowl": [
+    {
+      "id": 6114372,
+      "ident": "cjessett/4.12.2025/19:13",
+      "type": 1,
+      "isSingle": true,
+      "timeClaim": "2025-12-05T02:20:40Z",
+      "utcOffsetStart": -28800,
+      "hasComment": false,
+      "hasReplies": false,
+      "hasPhotos": false,
+      "numFans": 0,
+      "countries": [
+        "US"
+      ],
+      "urlThumbProfile": "https://www.xcontest.org/flight.thumbs/profile/?fl=6114372",
+      "league": {
+        "name": "World XContest 2026",
+        "ident": "world2026",
+        "linkFlights": "https://www.xcontest.org/2026/world/en/flights/",
+        "linkJointFlights": "https://www.xcontest.org/2026/world/en/flights/air-buddies",
+        "flight": {
+          "id": 11324480,
+          "isActive": true,
+          "isPublic": true,
+          "isValid": null,
+          "inLocalZone": false,
+          "link": "https://www.xcontest.org/2026/world/en/flights/detail:cjessett/4.12.2025/19:13",
+          "urlThumbMap": "https://www.xcontest.org/flight.thumbs/map/?fl=6114372&rt=48860757"
+        },
+        "pilot": {
+          "id": 2333612,
+          "link": "https://www.xcontest.org/2026/world/en/pilots/detail:cjessett",
+          "linkApi": "https://www.xcontest.org/api/data/?pilots/world/2026:64620"
+        },
+        "route": {
+          "id": 48860757,
+          "type": "FREE_TRIANGLE",
+          "distance": 90.664,
+          "avgSpeed": 25.0242,
+          "points": 108.8,
+          "factor": 1.2,
+          "discrimination": {
+            "isDiscrimination": false,
+            "discrimination": 1,
+            "factor": 1.2,
+            "points": 108.8
+          }
+        },
+        "comp": {
+          "goalStatus": null,
+          "timeStart": null,
+          "timeFinish": null,
+          "duration": null,
+          "subscore": {
+            "distance": 0,
+            "speed": 0
+          }
+        }
+      },
+      "pilot": {
+        "id": 64620,
+        "username": "cjessett",
+        "name": "CJ Jessett",
+        "countryIso": "US",
+        "countryName": "United States",
+        "isMale": true
+      },
+      "pointStart": {
+        "time": "2025-12-04T19:13:32Z"
+      },
+      "stats": {
+        "duration": "PT03H39M18S"
+      },
+      "vars": {},
+      "takeoff": {
+        "id": 3914,
+        "name": "EJ Bowl",
+        "countryIso": "US",
+        "countryName": "United States",
+        "link": "https://www.xcontest.org/2026/world/en/hotspots?detail#filter[date]=2025-12-04@filter[site]=MzA3MA.i-Dv49EdvLvP@filter[catg]=FAI3"
+      },
+      "glider": {
+        "nameProducer": "OZONE",
+        "nameCompact": "OZONE Zeolite 2 GT",
+        "name": "OZONE Zeolite 2 GT",
+        "classFAI": 3,
+        "subclass": "D",
+        "class": "B",
+        "classOld": "B"
+      }
+    },
+    {
+      "id": 6114347,
+      "ident": "jayzoll/4.12.2025/18:53",
+      "type": 1,
+      "isSingle": true,
+      "timeClaim": "2025-12-05T00:52:11Z",
+      "utcOffsetStart": -28800,
+      "hasComment": false,
+      "hasReplies": false,
+      "hasPhotos": false,
+      "numFans": 0,
+      "countries": [
+        "US"
+      ],
+      "urlThumbProfile": "https://www.xcontest.org/flight.thumbs/profile/?fl=6114347",
+      "league": {
+        "name": "World XContest 2026",
+        "ident": "world2026",
+        "linkFlights": "https://www.xcontest.org/2026/world/en/flights/",
+        "linkJointFlights": "https://www.xcontest.org/2026/world/en/flights/air-buddies",
+        "flight": {
+          "id": 11324424,
+          "isActive": true,
+          "isPublic": true,
+          "isValid": null,
+          "inLocalZone": false,
+          "link": "https://www.xcontest.org/2026/world/en/flights/detail:jayzoll/4.12.2025/18:53",
+          "urlThumbMap": "https://www.xcontest.org/flight.thumbs/map/?fl=6114347&rt=48860648"
+        },
+        "pilot": {
+          "id": 2344346,
+          "link": "https://www.xcontest.org/2026/world/en/pilots/detail:jayzoll",
+          "linkApi": "https://www.xcontest.org/api/data/?pilots/world/2026:84282"
+        },
+        "route": {
+          "id": 48860648,
+          "type": "FREE_TRIANGLE",
+          "distance": 46.882,
+          "avgSpeed": 17.5588,
+          "points": 56.26,
+          "factor": 1.2,
+          "discrimination": {
+            "isDiscrimination": false,
+            "discrimination": 1,
+            "factor": 1.2,
+            "points": 56.26
+          }
+        },
+        "comp": {
+          "goalStatus": null,
+          "timeStart": null,
+          "timeFinish": null,
+          "duration": null,
+          "subscore": {
+            "distance": 0,
+            "speed": 0
+          }
+        }
+      },
+      "pilot": {
+        "id": 84282,
+        "username": "jayzoll",
+        "name": "Jay Zollinger",
+        "countryIso": "US",
+        "countryName": "United States",
+        "isMale": true
+      },
+      "pointStart": {
+        "time": "2025-12-04T18:53:22Z"
+      },
+      "stats": {
+        "duration": "PT02H55M27S"
+      },
+      "vars": {},
+      "takeoff": {
+        "id": 3914,
+        "name": "EJ Bowl",
+        "countryIso": "US",
+        "countryName": "United States",
+        "link": "https://www.xcontest.org/2026/world/en/hotspots?detail#filter[date]=2025-12-04@filter[site]=MzA3MA.i-Dv49EdvLvP@filter[catg]=FAI3"
+      },
+      "glider": {
+        "nameProducer": "OZONE",
+        "nameCompact": "OZONE Photon",
+        "name": "OZONE Photon",
+        "classFAI": 3,
+        "subclass": "C",
+        "class": "B",
+        "classOld": "B"
+      }
+    },
+    {
+      "id": 6114350,
+      "ident": "climbhi2/4.12.2025/19:09",
+      "type": 1,
+      "isSingle": true,
+      "timeClaim": "2025-12-05T01:20:30Z",
+      "utcOffsetStart": -28800,
+      "hasComment": false,
+      "hasReplies": false,
+      "hasPhotos": false,
+      "numFans": 0,
+      "countries": [
+        "US"
+      ],
+      "urlThumbProfile": "https://www.xcontest.org/flight.thumbs/profile/?fl=6114350",
+      "league": {
+        "name": "World XContest 2026",
+        "ident": "world2026",
+        "linkFlights": "https://www.xcontest.org/2026/world/en/flights/",
+        "linkJointFlights": "https://www.xcontest.org/2026/world/en/flights/air-buddies",
+        "flight": {
+          "id": 11324430,
+          "isActive": true,
+          "isPublic": true,
+          "isValid": null,
+          "inLocalZone": false,
+          "link": "https://www.xcontest.org/2026/world/en/flights/detail:climbhi2/4.12.2025/19:09",
+          "urlThumbMap": "https://www.xcontest.org/flight.thumbs/map/?fl=6114350&rt=48860660"
+        },
+        "pilot": {
+          "id": 2329765,
+          "link": "https://www.xcontest.org/2026/world/en/pilots/detail:climbhi2",
+          "linkApi": "https://www.xcontest.org/api/data/?pilots/world/2026:59488"
+        },
+        "route": {
+          "id": 48860660,
+          "type": "FREE_TRIANGLE",
+          "distance": 36.055,
+          "avgSpeed": 15.8813,
+          "points": 43.27,
+          "factor": 1.2,
+          "discrimination": {
+            "isDiscrimination": false,
+            "discrimination": 1,
+            "factor": 1.2,
+            "points": 43.27
+          }
+        },
+        "comp": {
+          "goalStatus": null,
+          "timeStart": null,
+          "timeFinish": null,
+          "duration": null,
+          "subscore": {
+            "distance": 0,
+            "speed": 0
+          }
+        }
+      },
+      "pilot": {
+        "id": 59488,
+        "username": "climbhi2",
+        "name": "Tommy Futral",
+        "countryIso": "US",
+        "countryName": "United States",
+        "isMale": true
+      },
+      "pointStart": {
+        "time": "2025-12-04T19:09:14Z"
+      },
+      "stats": {
+        "duration": "PT02H41M53S"
+      },
+      "vars": {},
+      "takeoff": {
+        "id": 3914,
+        "name": "EJ Bowl",
+        "countryIso": "US",
+        "countryName": "United States",
+        "link": "https://www.xcontest.org/2026/world/en/hotspots?detail#filter[date]=2025-12-04@filter[site]=MzA3MA.i-Dv49EdvLvP@filter[catg]=FAI3"
+      },
+      "glider": {
+        "nameProducer": "",
+        "nameCompact": "ADVANCE Omega 22",
+        "name": "ADVANCE Omega 22",
+        "classFAI": 3,
+        "subclass": "D",
+        "class": "B",
+        "classOld": "B"
+      }
+    }
+  ],
+  "VOR": [
+    {
+      "id": 6114373,
+      "ident": "AndrewKarnowski/4.12.2025/20:33",
+      "type": 1,
+      "isSingle": true,
+      "timeClaim": "2025-12-05T02:20:51Z",
+      "utcOffsetStart": -28800,
+      "hasComment": false,
+      "hasReplies": false,
+      "hasPhotos": false,
+      "numFans": 0,
+      "countries": [
+        "US"
+      ],
+      "urlThumbProfile": "https://www.xcontest.org/flight.thumbs/profile/?fl=6114373",
+      "league": {
+        "name": "World XContest 2026",
+        "ident": "world2026",
+        "linkFlights": "https://www.xcontest.org/2026/world/en/flights/",
+        "linkJointFlights": "https://www.xcontest.org/2026/world/en/flights/air-buddies",
+        "flight": {
+          "id": 11324483,
+          "isActive": true,
+          "isPublic": true,
+          "isValid": null,
+          "inLocalZone": false,
+          "link": "https://www.xcontest.org/2026/world/en/flights/detail:AndrewKarnowski/4.12.2025/20:33",
+          "urlThumbMap": "https://www.xcontest.org/flight.thumbs/map/?fl=6114373&rt=48860762"
+        },
+        "pilot": {
+          "id": 2329664,
+          "link": "https://www.xcontest.org/2026/world/en/pilots/detail:AndrewKarnowski",
+          "linkApi": "https://www.xcontest.org/api/data/?pilots/world/2026:75107"
+        },
+        "route": {
+          "id": 48860762,
+          "type": "FREE_FLIGHT",
+          "distance": 12.89,
+          "avgSpeed": 20.6423,
+          "points": 12.89,
+          "factor": 1,
+          "discrimination": {
+            "isDiscrimination": false,
+            "discrimination": 1,
+            "factor": 1,
+            "points": 12.89
+          }
+        },
+        "comp": {
+          "goalStatus": null,
+          "timeStart": null,
+          "timeFinish": null,
+          "duration": null,
+          "subscore": {
+            "distance": 0,
+            "speed": 0
+          }
+        }
+      },
+      "pilot": {
+        "id": 75107,
+        "username": "AndrewKarnowski",
+        "name": "Andrew Karnowski",
+        "countryIso": "US",
+        "countryName": "United States",
+        "isMale": true
+      },
+      "pointStart": {
+        "time": "2025-12-04T20:33:57Z"
+      },
+      "stats": {
+        "duration": "PT00H37M45S"
+      },
+      "vars": {},
+      "takeoff": {
+        "id": 6621,
+        "name": "VOR",
+        "countryIso": "US",
+        "countryName": "United States",
+        "link": "https://www.xcontest.org/2026/world/en/hotspots?detail#filter[date]=2025-12-04@filter[site]=NTM3Ng.MUwwVm8qOWcG@filter[catg]=FAI3"
+      },
+      "glider": {
+        "nameProducer": "OZONE",
+        "nameCompact": "OZONE Delta 3",
+        "name": "OZONE Delta 3",
+        "classFAI": 3,
+        "subclass": "C",
+        "class": "B",
+        "classOld": "B"
+      }
+    }
+  ]
+}
