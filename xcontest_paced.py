@@ -5,7 +5,7 @@ Start the Flight Viewer in another terminal:
     node server.mjs
 
 Example:
-    python3 xcontest_paced.py 2025-12-01 2025-12-31 --delay 30 --jitter 10
+    python3 xcontest_paced.py 2025-12-01 2025-12-31 --format csv --delay 30 --jitter 10
 
 --delay is a minimum number of seconds between date requests to the viewer.
 Each viewer date request itself fetches the four configured launch sites.
@@ -63,7 +63,7 @@ def fetch_date(base_url, day, timeout):
     return data
 
 
-def write_exports(path_prefix, start, end, days, failures):
+def write_exports(path_prefix, start, end, days, failures, fmt='both'):
     flights = []
     for day in days:
         flights.extend(day['flights'])
@@ -73,11 +73,15 @@ def write_exports(path_prefix, start, end, days, failures):
                'flights': flights, 'failures': failures, 'days': days}
     prefix = Path(path_prefix)
     prefix.parent.mkdir(parents=True, exist_ok=True)
-    (prefix.parent / (prefix.name + '.json')).write_text(json.dumps(payload, indent=2), encoding='utf-8')
-    with (prefix.parent / (prefix.name + '.csv')).open('w', newline='', encoding='utf-8') as f:
-        writer = csv.DictWriter(f, fieldnames=FIELDS, extrasaction='ignore')
-        writer.writeheader()
-        writer.writerows(flights)
+    if fmt in ('json', 'both'):
+        (prefix.parent / (prefix.name + '.json')).write_text(
+            json.dumps(payload, indent=2), encoding='utf-8'
+        )
+    if fmt in ('csv', 'both'):
+        with (prefix.parent / (prefix.name + '.csv')).open('w', newline='', encoding='utf-8') as f:
+            writer = csv.DictWriter(f, fieldnames=FIELDS, extrasaction='ignore')
+            writer.writeheader()
+            writer.writerows(flights)
     return len(flights)
 
 
@@ -90,7 +94,8 @@ def main(argv=None, *, fetcher=fetch_date, sleeper=time.sleep, jitterer=None):
     parser.add_argument('--jitter', type=float, default=10.0, help='Additional random 0..N seconds (default 10)')
     parser.add_argument('--max-days', type=int, default=None, help='Stop after fetching at most N uncached days')
     parser.add_argument('--cache', default='.xcontest-cache', help='Directory of successful daily responses')
-    parser.add_argument('--output', default=None, help='Output filename prefix')
+    parser.add_argument('--output', default=None, help='Output filename prefix (without extension)')
+    parser.add_argument('--format', choices=('csv', 'json', 'both'), default='both', help='File format to write (default: both)')
     parser.add_argument('--timeout', type=float, default=120.0)
     args = parser.parse_args(argv)
     end = args.end or args.start
@@ -150,8 +155,9 @@ def main(argv=None, *, fetcher=fetch_date, sleeper=time.sleep, jitterer=None):
             cache_file.write_text(json.dumps(data, indent=2), encoding='utf-8')
         print(f"{day}: {len(data['flights'])} flights" + (' (cache)' if cached else ' (fetched)'), file=sys.stderr)
 
-    n = write_exports(prefix, start_str, end_str, days, failures)
-    print(f'Saved {n} flights across {len(days)} successful dates: {prefix}.csv / {prefix}.json')
+    n = write_exports(prefix, start_str, end_str, days, failures, args.format)
+    created = ' / '.join(f'{prefix}.{ext}' for ext in (('csv', 'json') if args.format == 'both' else (args.format,)))
+    print(f'Saved {n} flights across {len(days)} successful dates: {created}')
     if stopped:
         print('Stopped on a failure. Successful days are cached; rerun to resume once access is available.', file=sys.stderr)
         return 1

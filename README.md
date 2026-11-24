@@ -154,3 +154,19 @@ Node tests run against mocked XContest responses; Python tests use a local fixtu
 ## Sharing
 
 This folder can be committed directly to a Git repository. No credentials, `.xcontest-cache` data, or generated CSV/JSON exports need to be committed. Before publishing, review whether you want to include a software license and whether your data use is consistent with XContest's terms.
+
+### `argument start: Expected YYYY-MM-DD` when using `scrape:csv`
+
+Your `package.json` and Python script are out of sync. The `scrape:csv` and `scrape:json` npm commands require a version of `xcontest_paced.py` that recognizes `--format`. Confirm with:
+
+```bash
+python3 xcontest_paced.py --help
+```
+
+The options must include `--format {csv,json,both}`. Replace the Python script with the one supplied in this package. Then run, for example:
+
+```bash
+npm run scrape:csv -- 2026-11-01 2026-11-24 --delay 2 --jitter 1 --output exports/nov-26
+```
+
+**Note:** The local viewer must be running in another terminal (`npm start`).

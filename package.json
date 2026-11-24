@@ -1,6 +1,6 @@
 {
   "name": "santa-barbara-xcontest-flights",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "private": true,
   "description": "Local public XContest flight viewer and paced date-range exporter for Santa Barbara launch sites",
   "type": "module",
